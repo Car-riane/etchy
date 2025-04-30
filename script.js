@@ -1,6 +1,13 @@
 const gridContainer = document.getElementById('grid-container');
 const grids = document.getElementById('change-size')
+const colorPicker = document.getElementById('color-picker');
+
 let gridSize = 16;
+let currentColor = colorPicker.value;
+
+colorPicker.addEventListener('input', (event) => {
+  currentColor = event.target.value;
+});
 
 function createGrid(size) {
   gridContainer.innerHTML = '';
@@ -13,7 +20,7 @@ function createGrid(size) {
     gridItem.style.height = itemSize;
 
     gridItem.addEventListener('mouseenter', () => {
-      gridItem.classList.add('colored');
+      gridItem.style.backgroundColor = currentColor;
     });
 
     gridContainer.appendChild(gridItem);
@@ -24,11 +31,11 @@ function createGrid(size) {
 createGrid(gridSize);
 
 grids.addEventListener('click', ()=> {
-  let newGrid = prompt("Enter the new grid size(max 100):");
+  let newGrid = prompt("Enter the new grid size(max 200):");
   let newSize = parseInt(newGrid);
 
-  if (isNaN(newGrid) || newGrid <=0 || newGrid > 100) {
-    alert("Please enter a valid positive number(max 100).");
+  if (isNaN(newGrid) || newGrid <=0 || newGrid > 200) {
+    alert("Please enter a valid positive number(max 200).");
     return;
   }
 
