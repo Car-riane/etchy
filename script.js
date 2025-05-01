@@ -1,6 +1,7 @@
 const gridContainer = document.getElementById('grid-container');
 const grids = document.getElementById('change-size')
 const colorPicker = document.getElementById('color-picker');
+const gridReset = document.getElementById('reset-grid');
 
 let gridSize = 16;
 let currentColor = colorPicker.value;
@@ -30,7 +31,7 @@ function createGrid(size) {
 
 createGrid(gridSize);
 
-grids.addEventListener('click', ()=> {
+grids.addEventListener('click', () => {
   let newGrid = prompt("Enter the new grid size(max 200):");
   let newSize = parseInt(newGrid);
 
@@ -40,4 +41,8 @@ grids.addEventListener('click', ()=> {
   }
 
   createGrid(newSize);
+});
+
+gridReset.addEventListener('click', () => {
+  createGrid(16);
 });
