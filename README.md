@@ -4,7 +4,7 @@ A browser-based Etch-a-Sketch built with vanilla HTML, CSS, and JavaScript. Hove
 
 ## Live Demo
 
-> _Add your GitHub Pages link here_
+> https://car-riane.github.io/etchy/
 
 ---
 
